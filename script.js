@@ -6,6 +6,18 @@ const clearBtn = document.querySelector('.clear');
 const firstNumber = document.querySelector('.first-number');
 const secondNumber = document.querySelector('.second-number');
 
+class Calculator {
+    constructor(firstNumber, secondNumber) {
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+        this.clear();
+    }
+}
+
+clear(){
+
+};
+
 // function add(a, b) {
 //     return a + b;
 // };
