@@ -50,19 +50,21 @@ numberBtns.forEach(function(numberBtn) {
 });
 
 operateBtns.forEach(function(operateBtn) {
-    operateBtn.addEventListener('click', function() {
-        operator = operateBtn.textContent;
-        firstNumber = Number(currentNumber.textContent);
-        displayValue = '';
-        formerNumber.textContent = firstNumber;
-    });
+    operateBtns.forEach(function(operateBtn) {
+        operateBtn.addEventListener('click', function() {
+            operator = operateBtn.textContent;
+            firstNumber = Number(currentNumber.textContent);
+            displayValue = '';
+            formerNumber.textContent = `${firstNumber} ${operator}`;
+        });
+    })
 });
-
-document.querySelector('.equals').              addEventListener('click', function() {
+    
+document.querySelector('.equals').addEventListener('click', function() {
     secondNumber = Number(currentNumber.textContent);
     const result = operate(operator, firstNumber, secondNumber);
     currentNumber.textContent = result;
-    formerNumber.textContent = '';
+    formerNumber.textContent = `${firstNumber} ${operator} ${secondNumber} =`;
     firstNumber = '';
     secondNumber = '';
     operator = '';
