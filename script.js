@@ -2,6 +2,7 @@ let firstNumber = '';
 let secondNumber = '';
 let operator = '';
 let displayValue = '';
+
 const display = document.querySelector('.display');
 const numberBtns = document.querySelectorAll('.number');
 const operateBtns = document.querySelectorAll('.operator');
@@ -46,8 +47,3 @@ numberBtns.forEach(function(numberBtn) {
         display.textContent = displayValue;
     });
 });
-
-function updateDisplay(number) {
-    displayValue += number;
-    document.querySelector('.display').textContent = displayValue;
-};
