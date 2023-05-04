@@ -74,3 +74,11 @@ document.querySelector('.equals').addEventListener('click', function() {
         displayValue = '';
     };
 });
+
+clearBtn.addEventListener('click', function() {
+    firstNumber = null;
+    operator = null;
+    displayValue = '';
+    formerNumber.textContent = '';
+    currentNumber.textContent = '0';
+})
