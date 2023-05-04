@@ -3,7 +3,8 @@ let secondNumber = '';
 let operator = '';
 let displayValue = '';
 
-const display = document.querySelector('.display');
+const formerNumber = document.querySelector('.former-number');
+const currentNumber = document.querySelector('.current-number');
 const numberBtns = document.querySelectorAll('.number');
 const operateBtns = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
@@ -44,6 +45,15 @@ numberBtns.forEach(function(numberBtn) {
     numberBtn.addEventListener('click', function() {
         const number = numberBtn.textContent;
         displayValue += number;
-        display.textContent = displayValue;
+        currentNumber.textContent = displayValue;
+    });
+});
+
+operateBtns.forEach(function(operateBtn) {
+    operateBtn.addEventListener('click', function() {
+        operator = operateBtn.textContent;
+        firstNumber = Number(currentNumber.textContent);
+        displayValue = '';
+        formerNumber.textContent = firstNumber;
     });
 });
