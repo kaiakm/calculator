@@ -1,0 +1,19 @@
+.calculator {
+    width: 450px;
+    margin: auto;
+}
+
+.display {
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.current-number {
+    font-size: 40px;
+}
+
+button {
+    min-width: 50px;
+    font-size: 20px;
+    padding: 10px;
+}
