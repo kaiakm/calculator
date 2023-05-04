@@ -55,7 +55,6 @@ operateBtns.forEach(function(operateBtn) {
         } else {
             const secondNumber = Number(displayValue);
             const result = operate(operator, firstNumber, secondNumber);
-            firstNumber = result;
             currentNumber.textContent = result;
         };
         operator = operateBtn.textContent;
@@ -70,7 +69,7 @@ document.querySelector('.equals').addEventListener('click', function() {
         const result = operate(operator, firstNumber, secondNumber);
         currentNumber.textContent = result;
         formerNumber.textContent = `${firstNumber} ${operator} ${secondNumber} =`;
-        firstNumber = null;
+        firstNumber = result;
         operator = null;
         displayValue = '';
     };
