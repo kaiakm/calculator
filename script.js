@@ -57,3 +57,13 @@ operateBtns.forEach(function(operateBtn) {
         formerNumber.textContent = firstNumber;
     });
 });
+
+document.querySelector('.equals').              addEventListener('click', function() {
+    secondNumber = Number(currentNumber.textContent);
+    const result = operate(operator, firstNumber, secondNumber);
+    currentNumber.textContent = result;
+    formerNumber.textContent = '';
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+});
