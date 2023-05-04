@@ -50,14 +50,13 @@ numberBtns.forEach(function(numberBtn) {
 });
 
 operateBtns.forEach(function(operateBtn) {
-    operateBtns.forEach(function(operateBtn) {
-        operateBtn.addEventListener('click', function() {
-            operator = operateBtn.textContent;
-            firstNumber = Number(currentNumber.textContent);
-            displayValue = '';
-            formerNumber.textContent = `${firstNumber} ${operator}`;
-        });
-    })
+    operateBtn.addEventListener('click', function() {
+        operator = operateBtn.textContent;
+        firstNumber = Number(currentNumber.textContent);
+        displayValue = '';
+        formerNumber.textContent = `${firstNumber} ${operator}`;
+        currentNumber.textContent = '';
+    });
 });
     
 document.querySelector('.equals').addEventListener('click', function() {
