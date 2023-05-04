@@ -7,44 +7,26 @@ const currentNumber = document.querySelector('.current-number');
 const numberBtns = document.querySelectorAll('.number');
 const operateBtns = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
-
-function add(a, b) {
-    return a + b;
-};
-
-function subtract(a, b) {
-    return a - b;
-};
-
-function multiply(a, b) {
-    return a * b;
-};
-
-function divide(a, b) {
-    if (b === 0) {
-        return 'error';
-    } else {
-        return a / b;
-    };
-};
+const deleteBtn = document.querySelector('.delete');
 
 function operate(operator, a, b) {
     a = Number(a);
     b = Number(b);
     if (operator === '+') {
-      return (a + b).toFixed(5);
+        return a + b;
     } else if (operator === '-') {
-      return (a - b).toFixed(5);
+        return a - b;
     } else if (operator === 'x') {
-      return (a * b).toFixed(5);
+        return a * b;
     } else if (operator === '/') {
-      if (b === 0) {
-        return 'error';
-      } else {
-        return (a / b).toFixed(5);
-      }
+        if (b === 0) {
+            return 'error';
+        } else {
+            const result = a / b;
+            return result % 1 !== 0 ? result.toFixed(5) : result;
+        }
     }
-  };
+};
 
 numberBtns.forEach(function(numberBtn) {
     numberBtn.addEventListener('click', function() {
@@ -87,4 +69,9 @@ clearBtn.addEventListener('click', function() {
     displayValue = '';
     formerNumber.textContent = '';
     currentNumber.textContent = '0';
-})
+});
+
+deleteBtn.addEventListener('click', function() {
+    displayValue = displayValue.slice(0, -1);
+    currentNumber.textContent = displayValue;
+});
