@@ -8,39 +8,43 @@ const numberBtns = document.querySelectorAll('.number');
 const operateBtns = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
 
-// function add(a, b) {
-//     return a + b;
-// };
+function add(a, b) {
+    return a + b;
+};
 
-// function subtract(a, b) {
-//     return a - b;
-// };
+function subtract(a, b) {
+    return a - b;
+};
 
-// function multiply(a, b) {
-//     return a * b;
-// };
+function multiply(a, b) {
+    return a * b;
+};
 
-// function divide(a, b) {
-//     if (b === 0) {
-//         return 'error';
-//     } else {
-//         return a / b;
-//     };
-// };
+function divide(a, b) {
+    if (b === 0) {
+        return 'error';
+    } else {
+        return a / b;
+    };
+};
 
 function operate(operator, a, b) {
-    let result;
+    a = Number(a);
+    b = Number(b);
     if (operator === '+') {
-        result = a + b;
+      return (a + b).toFixed(5);
     } else if (operator === '-') {
-        result = a - b;
+      return (a - b).toFixed(5);
     } else if (operator === 'x') {
-        result = a * b;
+      return (a * b).toFixed(5);
     } else if (operator === '/') {
-        result = a / b;
-    };
-    return parseFloat(result.toFixed(5));
-};
+      if (b === 0) {
+        return 'error';
+      } else {
+        return (a / b).toFixed(5);
+      }
+    }
+  };
 
 numberBtns.forEach(function(numberBtn) {
     numberBtn.addEventListener('click', function() {
