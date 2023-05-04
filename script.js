@@ -1,6 +1,5 @@
-let firstNumber = '';
-let secondNumber = '';
-let operator = '';
+let firstNumber = null;
+let operator = null;
 let displayValue = '';
 
 const formerNumber = document.querySelector('.former-number');
@@ -51,20 +50,28 @@ numberBtns.forEach(function(numberBtn) {
 
 operateBtns.forEach(function(operateBtn) {
     operateBtn.addEventListener('click', function() {
+        if (firstNumber === null) {
+            firstNumber = Number(displayValue);
+        } else {
+            const secondNumber = Number(displayValue);
+            const result = operate(operator, firstNumber, secondNumber);
+            firstNumber = result;
+            currentNumber.textContent = result;
+        };
         operator = operateBtn.textContent;
-        firstNumber = Number(currentNumber.textContent);
         displayValue = '';
         formerNumber.textContent = `${firstNumber} ${operator}`;
-        currentNumber.textContent = '';
     });
 });
     
 document.querySelector('.equals').addEventListener('click', function() {
-    secondNumber = Number(currentNumber.textContent);
-    const result = operate(operator, firstNumber, secondNumber);
-    currentNumber.textContent = result;
-    formerNumber.textContent = `${firstNumber} ${operator} ${secondNumber} =`;
-    firstNumber = '';
-    secondNumber = '';
-    operator = '';
+    if (firstNumber !== null && operator !== null) {
+        const secondNumber = Number(displayValue);
+        const result = operate(operator, firstNumber, secondNumber);
+        currentNumber.textContent = result;
+        formerNumber.textContent = `${firstNumber} ${operator} ${secondNumber} =`;
+        firstNumber = null;
+        operator = null;
+        displayValue = '';
+    };
 });
