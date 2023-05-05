@@ -1,13 +1,16 @@
 body {
-    background: #C9B79C;
+    background: #e3dec8;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
 }
 
 .calculator {
-    background: #342A21;
+    background: #99beb7;
     width: 400px;
     height: 550px;
-    margin: auto;
+    margin: 20px auto;
     display: flex;
+    box-shadow: 15px 15px;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
@@ -16,7 +19,7 @@ body {
 .display {
     height: 100px;
     padding: 10px;
-    background: #f1e0c5;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,17 +56,27 @@ body {
 }
 
 button {
+    font-family: 'Press Start 2P', sans-serif;
     width: 100%;
     font-size: 20px;
     padding: 10px;
-    background: #f1e0c5;
+    background: #f2c665;
+    border: 1px solid #b58c33;
+    box-shadow: 3px 3px #000;
+    border: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0px #000;
+}
+
+button:active {
+    transform: translateY(3px) translateZ(3px);
 }
 
 .clear,
 .delete {
-    background-color: #71816D;
+    background-color: #ef7546;
 }
 
 .operator {
-    background-color: #DA667B;
+    background-color: #ca3c4a;
 }
